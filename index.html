@@ -124,14 +124,13 @@
   .day-map-card .n{font-size:11px;color:var(--muted)}
   .day-map-card ul{margin:4px 0;padding-left:18px;font-size:12.5px}
   .day-map-card li{margin-bottom:3px}
-  .route-btn{display:inline-block;margin-top:8px;padding:6px 12px;background:var(--d1);color:#fff;border-radius:6px;text-decoration:none;font-size:12px;font-weight:600}
-  .day-map-card.d2 .route-btn{background:var(--d2)}
-  .day-map-card.d3 .route-btn{background:var(--d3)}
-  .day-map-card.d4 .route-btn{background:var(--d4)}
-  .day-map-card.d5 .route-btn{background:var(--d5)}
-  .day-map-card.d6 .route-btn{background:var(--d6)}
-
-  .foot{font-size:11.5px;color:var(--muted);margin-top:26px;padding-top:14px;border-top:1px solid var(--line)}
+  .route-btn-large{display:block;margin:16px 0 8px;padding:14px;background:var(--d1);color:#fff;text-align:center;border-radius:12px;text-decoration:none;font-size:15px;font-weight:600;box-shadow:0 4px 12px rgba(0,0,0,0.1)}
+  .route-btn-large:active{transform:scale(0.98)}
+  .d2-btn{background:var(--d2)}
+  .d3-btn{background:var(--d3)}
+  .d4-btn{background:var(--d4)}
+  .d5-btn{background:var(--d5)}
+  .d6-btn{background:var(--d6)}
 
   @media (max-width:720px){
     .wrap{padding:18px 14px 60px}
@@ -200,7 +199,6 @@
     <button class="tab" data-day="info">📋 清單</button>
     <button class="tab" data-day="flight">✈ 航班</button>
     <button class="tab" data-day="tools">🛠 行前必辦</button>
-    <button class="tab" data-day="map">🗺 地圖總覽</button>
   </nav>
 
   <!-- ============ FLIGHT ============ -->
@@ -250,64 +248,40 @@
       <li class="event transit"><div class="time">08:30 – 12:55（3h 25m）</div><div class="title">✈ JX800 台北 TPE → 東京成田 NRT T2</div><div class="desc">Airbus A350-900 · 經濟艙 N · 託運 1 件/人。</div><div class="tags"><span class="tag transit">星宇航空</span></div></li>
       <li class="event transit"><div class="time">12:55</div><div class="title">✈ <a class="gmap" href="https://maps.google.com/?q=成田国際空港" target="_blank">成田機場 T2</a> 抵達</div></li>
       <li class="event transit"><div class="time">12:55 – 14:15（80 min）</div><div class="title">入境 × 領行李</div><div class="tags"><span class="tag buffer">buffer +30 min</span></div></li>
-      <li class="event transit"><div class="time">14:15 – 15:45（90 min）</div><div class="title">🚄 成田 → 新宿</div><div class="desc">N'EX 直達 or Skyliner + 山手線。</div><div class="tags"><span class="tag transit">N'EX / Skyliner</span></div></li>
-
-      <li class="event locker">
-        <div class="time">15:45 – 16:05（20 min）</div>
-        <div class="title">🧳 <a class="gmap" href="https://maps.google.com/?q=新宿駅南口" target="_blank">新宿站</a>寄大件行李</div>
-        <div class="desc">走到南口 → 先試 2F 南檢票口內置物櫃。詳細策略看下方卡片。</div>
-        <div class="tags"><span class="tag locker">看置物櫃指南 ↓</span></div>
+      <li class="event transit">
+        <div class="time">14:15 – 15:15（60 min）</div>
+        <div class="title">🚄 成田 → 日暮里/上野</div>
+        <div class="desc">搭乘 Skyliner 直達日暮里 (36 分)，再轉乘山手線。最速且避開新宿迷宮。</div>
+        <div class="tags"><span class="tag transit">Skyliner</span></div>
       </li>
-    </ol>
-
-    <div class="locker-card">
-      <h3>🧳 新宿站置物櫃完整指南</h3>
-
-      <h4>📍 優先順序（一到就快找，櫃子滿得快）</h4>
-      <div class="priority"><b>① 2F 南口檢票口內</b> · 最靠近 NEWoMan · L/XL 特大櫃多<br>
-        <span style="color:#666;font-size:12px">走入南剪票口 → 上 2F → 靠近小田急線轉乘方向</span></div>
-      <div class="priority"><b>② B1F 5/6 號線連絡通道</b> · 位置隱密、空櫃機率高<br>
-        <span style="color:#666;font-size:12px">往 5/6 號月台走廊裡面，S/M/L 齊全</span></div>
-      <div class="priority"><b>③ 西口地下通道</b> · 特大櫃最多<br>
-        <span style="color:#666;font-size:12px">出西口往地下走，有一整條大型櫃走廊</span></div>
-      <div class="priority"><b>④ 新南口 / Busta Shinjuku 附近</b> · 備案<br>
-        <span style="color:#666;font-size:12px">高速巴士總站周邊，人較少</span></div>
-
-      <h4>💴 尺寸 × 價格（Suica/PASMO 可付）</h4>
-      <div class="price-grid">
-        <div class="h">尺寸</div><div class="h">適合</div><div class="h">價格</div>
-        <div>SS</div><div>背包、小包</div><div>¥300</div>
-        <div>S</div><div>小登機箱</div><div>¥500</div>
-        <div>M</div><div>一般登機箱</div><div>¥600–700</div>
-        <div>L</div><div>28" 行李箱</div><div>¥900</div>
-        <div>XL</div><div>最大件</div><div>¥1000</div>
-      </div>
-
-      <h4>🆘 全部滿了的備案（預約制寄物）</h4>
-      <ul>
-        <li><a class="gmap" href="https://maps.google.com/?q=Bounce+Luggage+Storage+Shinjuku+Station+West+Gate" target="_blank"><b>Bounce Luggage Storage</b> 新宿西口</a>（09:30-18:00，App 預約）</li>
-        <li><a class="gmap" href="https://maps.google.com/?q=Radical+Storage+Shinjuku" target="_blank"><b>Radical Storage</b> 新宿站周邊</a>（09:30-19:00，預約制）</li>
-        <li>以上約 ¥500-800／件／天，小孩背包也算一件</li>
-      </ul>
-
-      <h4>📱 神器 App</h4>
-      <ul>
-        <li><b>Suica Locker Navi</b>：即時查新宿站空櫃位置（iOS/Android 免費）</li>
-      </ul>
-    </div>
-
-    <ol class="timeline">
-      <li class="event highlight"><div class="time">16:05 – 17:05（60 min）</div><div class="title">🛍 <a class="gmap" href="https://maps.google.com/?q=NEWoMan+新宿" target="_blank">NEWoMan 新宿</a>快速逛</div><div class="desc">聚焦 B1 食品、1-2F 雜貨。</div><div class="tags"><span class="tag highlight">購物</span></div></li>
-      <li class="event meal"><div class="time">17:05 – 18:30</div><div class="title">🍜 晚餐（新宿站周邊）</div><div class="desc">
+      <li class="event transit">
+        <div class="time">15:15 – 15:30（15 min）</div>
+        <div class="title">🚇 日暮里 → <a class="gmap" href="https://maps.google.com/?q=高田馬場駅" target="_blank">高田馬場</a></div>
+        <div class="desc">山手線內回，約 12 分鐘直達高田馬場。</div>
+        <div class="tags"><span class="tag transit">山手線</span></div>
+      </li>
+      <li class="event lodging">
+        <div class="time">15:30 – 16:00</div>
+        <div class="title">🏨 Check-in 放行李 · <a class="gmap" href="https://maps.google.com/?q=相鉄グランドフレッサ高田馬場" target="_blank">相鐵 Grand Fresa 高田馬場</a></div>
+        <div class="desc">卸下 4 個大行李箱，兩手空空出門逛街！</div>
+      </li>
+      <li class="event transit">
+        <div class="time">16:00 – 16:05</div>
+        <div class="title">🚇 高田馬場 → <a class="gmap" href="https://maps.google.com/?q=新宿駅" target="_blank">新宿</a></div>
+        <div class="desc">搭乘山手線，只要 2 站 (約 4 分鐘) 即可抵達新宿。</div>
+        <div class="tags"><span class="tag transit">山手線</span></div>
+      </li>
+      <li class="event highlight"><div class="time">16:15 – 17:30（75 min）</div><div class="title">🛍 <a class="gmap" href="https://maps.google.com/?q=NEWoMan+新宿" target="_blank">NEWoMan 新宿</a> 空手輕鬆逛</div><div class="desc">聚焦 B1 食品、1-2F 雜貨。沒了行李牽絆，逛街品質大幅提升。</div><div class="tags"><span class="tag highlight">購物</span></div></li>
+      <li class="event meal"><div class="time">17:30 – 19:00</div><div class="title">🍜 晚餐（新宿站周邊）</div><div class="desc">
         ① <a class="gmap" href="https://maps.google.com/?q=つな八+NEWoMan新宿" target="_blank">つな八 NEWoMan 店</a>（天婦羅）<br>
         ② <a class="gmap" href="https://maps.google.com/?q=一風堂+新宿南口店" target="_blank">一風堂 新宿南口</a>（拉麵）<br>
         ③ <a class="gmap" href="https://maps.google.com/?q=新宿うな鐵" target="_blank">新宿うな鐵</a>（鰻魚飯）<br>
         ④ NEWoMan B1 Food Hall
       </div><div class="tags"><span class="tag meal">晚餐</span></div></li>
-      <li class="event transit"><div class="time">18:30 – 19:00</div><div class="title">🚇 取行李 → <a class="gmap" href="https://maps.google.com/?q=高田馬場駅" target="_blank">高田馬場</a>（山手線 4 min）</div><div class="tags"><span class="tag transit">山手線</span></div></li>
-      <li class="event lodging"><div class="time">19:00 – 19:30</div><div class="title">🏨 Check-in · <a class="gmap" href="https://maps.google.com/?q=相鉄グランドフレッサ高田馬場" target="_blank">相鐵 Grand Fresa 高田馬場</a></div></li>
-      <li class="event"><div class="time">19:30 – 21:30</div><div class="title">🛁 洗澡 × 早睡</div><div class="desc">明天 06:30 起床，富士回遊 08:30 發車。</div></li>
+      <li class="event transit"><div class="time">19:00 – 19:10</div><div class="title">🚇 新宿 → <a class="gmap" href="https://maps.google.com/?q=高田馬場駅" target="_blank">高田馬場</a>（山手線 4 min）</div><div class="tags"><span class="tag transit">山手線</span></div></li>
+      <li class="event"><div class="time">19:15 – 21:00</div><div class="title">🛁 飯店休息 × 早睡</div><div class="desc">洗澡休息。明天 06:30 起床，富士回遊 08:30 發車。</div></li>
     </ol>
+    <a class="route-btn-large" href="https://www.google.com/maps/dir/成田国際空港/日暮里駅/高田馬場駅/NEWoMan+新宿/新宿うな鐵/相鉄グランドフレッサ高田馬場" target="_blank">🗺 Day 1 整日路線導航</a>
   </section>
 
   <!-- ============ DAY 2 ============ -->
@@ -332,7 +306,7 @@
       <li class="event transit"><div class="time">07:30 – 08:00</div><div class="title">🚄 高田馬場 → <a class="gmap" href="https://maps.google.com/?q=新宿駅南口" target="_blank">新宿南口</a> 9/10 月台</div><div class="tags"><span class="tag buffer">buffer +10 min</span></div></li>
       <li class="event transit"><div class="time">08:30 – 10:23</div><div class="title">🚄 富士回遊 3 號 → <a class="gmap" href="https://maps.google.com/?q=富士急ハイランド駅" target="_blank">富士急ハイランド</a>（已訂）</div><div class="tags"><span class="tag transit">富士回遊 ✅</span></div></li>
       <li class="event transit"><div class="time">10:23 – 10:40</div><div class="title">🚪 出站 × 寄物 × 入園</div></li>
-      <li class="event highlight"><div class="time">10:40 – 12:30</div><div class="title">🎢 ZOKKON + FUJIYAMA + Tondemina</div><div class="desc">主力雲霄飛車三連擊，早上排隊最短。</div></li>
+      <li class="event highlight"><div class="time">10:40 – 12:30</div><div class="title">🎢 ZOKKON + Tondemina</div><div class="desc">主力雲霄飛車三連擊，早上排隊最短。</div></li>
       <li class="event meal"><div class="time">12:30 – 13:30</div><div class="title">🍛 園內午餐 · Food Stadium</div></li>
       <li class="event highlight"><div class="time">13:30 – 15:30</div><div class="title">🍥 NARUTO × BORUTO 富嶽忍法帖</div><div class="desc">忍者主題區、互動體驗、小孩友善。</div></li>
       <li class="event highlight"><div class="time">15:30 – 17:00</div><div class="title">💪 絕望要塞 3 + 鐵骨番長</div></li>
@@ -340,7 +314,8 @@
       <li class="event lodging"><div class="time">17:30 – 18:30</div><div class="title">🏨 Check-in · <a class="gmap" href="https://maps.google.com/?q=HOTEL+MYSTAYS+Fuji+Onsen+Resort" target="_blank">MYSTAYS</a></div><div class="tags"><span class="tag lodging">溫泉</span></div></li>
       <li class="event meal"><div class="time">18:30 – 20:30</div><div class="title">🍶 飯店晚餐 + 大浴場</div></li>
     </ol>
-    <details class="rain"><summary>雨天備案 Day 2</summary><div class="body">富士急雷雨會停雲霄飛車。停擺時改去：① Thomas Land 室內設施 ② 園內手裏劍道場、NARUTO 互動館 ③ 直接提早去 MYSTAYS 泡湯。</div></details>
+    <a class="route-btn-large d2-btn" href="https://www.google.com/maps/dir/新宿駅/富士急ハイランド/HOTEL+MYSTAYS+Fuji+Onsen+Resort" target="_blank">🗺 Day 2 整日路線導航</a>
+    <details class="rain"><summary>雨天備案 Day 2</summary><div class="body">富士急雷雨會停戶外雲霄飛車。強烈推薦 10 歲男孩最愛的室內大作：① <b>富士飛行社 (Fuji Airways)</b> 4D模擬飛行體驗 ② <b>絕望要塞</b> (實境解謎逃脫) ③ <b>NARUTO 互動館</b>。或者直接提早去 MYSTAYS 泡湯放電。</div></details>
   </section>
 
   <!-- ============ DAY 3 ============ -->
@@ -377,17 +352,18 @@
       <li class="event transit"><div class="time">09:20 – 09:45</div><div class="title">📋 辦理領車手續</div><div class="desc">建議提前線上預約，現場核對駕照＋信用卡即可快速完成。</div><div class="tags"><span class="tag buffer">辦理約 20 分</span></div></li>
       <li class="event transit"><div class="time">09:45 – 10:15</div><div class="title">🚗 上山往新屋山神社（約 30 min）</div><div class="tags"><span class="tag transit">🚗 山路慢行</span></div></li>
       <li class="event highlight"><div class="time">10:15 – 11:15</div><div class="title">💰 <a class="gmap" href="https://maps.google.com/?q=新屋山神社+本宮" target="_blank">新屋山神社（金運神社・二合目本宮）</a></div><div class="desc">日本三大金運神社。二合目本宮在富士山腰（海拔 ~1700m），趁早上山車少。</div><div class="tags"><span class="tag highlight">金運</span></div></li>
-      <li class="event transit"><div class="time">11:15 – 11:45</div><div class="title">🚗 下山 → 富士吉田市中心</div></li>
-      <li class="event highlight"><div class="time">11:45 – 13:00</div><div class="title">🗻 <a class="gmap" href="https://maps.google.com/?q=新倉富士浅間神社+忠霊塔" target="_blank">新倉富士淺間神社 + 忠霊塔（新倉山淺間公園）</a></div><div class="desc">五重塔 × 富士山經典構圖。<b>398 階</b>階梯上塔，腿力考驗。</div><div class="tags"><span class="tag highlight">拍照地標</span></div></li>
-      <li class="event meal"><div class="time">13:00 – 14:15</div><div class="title">🍜 午餐 · <a class="gmap" href="https://maps.google.com/?q=ほうとう蔵+歩成+富士吉田店" target="_blank">ほうとう蔵 歩成 富士吉田店</a></div><div class="desc">全國ほうとう大賽冠軍店、特製味噌湯頭、本町通り旁順路。<br><span style="color:#666;font-size:12px">替換備案：<a class="gmap" href="https://maps.google.com/?q=冨士天ぷら+いだ天+河口湖" target="_blank">冨士天ぷら いだ天</a>（河口湖店・天婦羅）／<a class="gmap" href="https://maps.google.com/?q=甲州ほうとう小作+河口湖駅前店" target="_blank">小作 河口湖駅前</a>／<a class="gmap" href="https://maps.google.com/?q=不動茶屋+河口湖" target="_blank">不動茶屋</a></span></div><div class="tags"><span class="tag meal">ほうとう推薦</span></div></li>
-      <li class="event highlight"><div class="time">14:15 – 15:00</div><div class="title">🛍 <a class="gmap" href="https://maps.google.com/?q=富士吉田+本町通り" target="_blank">富士吉田懷舊商店街（本町通り）</a></div><div class="desc">昭和懷舊 × 富士山正對街道的超經典構圖。復古店家、富士山煎餅。</div></li>
-      <li class="event transit"><div class="time">15:00 – 15:30</div><div class="title">🚗 開往河口湖北岸</div></li>
-      <li class="event highlight"><div class="time">15:30 – 16:30</div><div class="title">🌸 <a class="gmap" href="https://maps.google.com/?q=河口湖自然生活館" target="_blank">河口湖自然生活館 + 大石公園</a></div><div class="desc">6 月<b>薰衣草季</b>＋藍莓霜淇淋＋富士山湖景最佳角度。</div><div class="tags"><span class="tag highlight">薰衣草季</span></div></li>
-      <li class="event highlight"><div class="time">16:30 – 17:15</div><div class="title">🛒 <a class="gmap" href="https://maps.google.com/?q=オギノ+河口湖店" target="_blank">Ogino 河口湖超市</a></div><div class="desc">熟食便當、刺身、當地限定商品 + Day 4 早餐。</div><div class="tags"><span class="tag highlight">超市</span></div></li>
+      <li class="event transit"><div class="time">11:15 – 11:30</div><div class="title">🚗 下山 → 富士吉田市中心</div></li>
+      <li class="event highlight"><div class="time">11:30 – 12:45</div><div class="title">🗻 <a class="gmap" href="https://maps.google.com/?q=新倉富士浅間神社+忠霊塔" target="_blank">新倉富士淺間神社 + 忠霊塔（新倉山淺間公園）</a></div><div class="desc">五重塔 × 富士山經典構圖。<b>398 階</b>階梯上塔，腿力考驗。</div><div class="tags"><span class="tag highlight">拍照地標</span></div></li>
+      <li class="event highlight"><div class="time">12:55 – 13:25</div><div class="title">🛍 <a class="gmap" href="https://maps.google.com/?q=富士吉田+本町通り" target="_blank">富士吉田懷舊商店街（本町通り）</a></div><div class="desc">昭和懷舊 × 富士山正對街道的超經典構圖。復古店家、富士山煎餅。</div></li>
+      <li class="event meal"><div class="time">13:40 – 14:55</div><div class="title">🍜 午餐 · <a class="gmap" href="https://maps.google.com/?q=ほうとう不動+東恋路店" target="_blank">餺飥不動 東戀路店</a></div><div class="desc">雲朵般純白的絕美建築（建築師保坂猛設計）× 招牌鐵鍋烏龍麵，好吃又好拍！<br><span style="color:#666;font-size:12px">從本町通り開車約 10 分鐘，順路往河口湖方向。</span></div><div class="tags"><span class="tag meal">設計名店</span><span class="tag meal">打卡必備</span></div></li>
+      <li class="event transit"><div class="time">14:55 – 15:15</div><div class="title">🚗 開往河口湖北岸</div></li>
+      <li class="event highlight"><div class="time">15:15 – 16:15</div><div class="title">🌸 <a class="gmap" href="https://maps.google.com/?q=河口湖自然生活館" target="_blank">河口湖自然生活館 + 大石公園</a></div><div class="desc">6 月<b>薰衣草季</b>＋藍莓霜淇淋＋富士山湖景最佳角度。</div><div class="tags"><span class="tag highlight">薰衣草季</span></div></li>
+      <li class="event highlight"><div class="time">16:25 – 17:05</div><div class="title">🛒 <a class="gmap" href="https://maps.google.com/?q=オギノ+河口湖店" target="_blank">Ogino 河口湖超市</a></div><div class="desc">熟食便當、刺身、當地限定商品 + Day 4 早餐。</div><div class="tags"><span class="tag highlight">超市</span></div></li>
       <li class="event lodging"><div class="time">17:15 – 17:45</div><div class="title">🏨 Check-in · <a class="gmap" href="https://maps.google.com/?q=THE+GARDEN+河口湖" target="_blank">THE GARDEN</a></div></li>
       <li class="event meal"><div class="time">18:00 – 20:00</div><div class="title">🍱 房內野餐晚餐</div><div class="tags"><span class="tag meal">房內野餐</span></div></li>
       <li class="event"><div class="time">20:00 – 21:00</div><div class="title">🛁 泡湯 / 湖畔散步</div></li>
     </ol>
+    <a class="route-btn-large d3-btn" href="https://www.google.com/maps/dir/新屋山神社+本宮/新倉富士浅間神社/富士吉田本町通り/ほうとう不動+東恋路店/河口湖自然生活館/オギノ+河口湖店/THE+GARDEN+河口湖" target="_blank">🗺 Day 3 整日路線導航</a>
     <details class="rain"><summary>雨天備案 Day 3</summary><div class="body">新屋山神社山上霧雨能見度差 → 改去 <b>富岳風穴・鳴沢冰穴</b> 地下洞窟（雨不影響）。忠霊塔階梯濕滑可省略，改在本町通り逛屋簷下老店。自然生活館室內館藏＋咖啡也耐雨。</div></details>
   </section>
 
@@ -400,20 +376,21 @@
       <li class="event meal"><div class="time">07:30 – 08:30</div><div class="title">🥐 飯店早餐</div></li>
       <li class="event lodging"><div class="time">08:30 – 09:00</div><div class="title">🏨 Check-out · THE GARDEN · 行李裝車</div></li>
       <li class="event transit"><div class="time">09:00 – 09:30</div><div class="title">🚗 開車至 <a class="gmap" href="https://maps.google.com/?q=山梨県南都留郡富士河口湖町船津3647-1" target="_blank">Nippon Rent-A-Car 河口湖駅前營業處</a> 還車</div><div class="desc">依你提供的主時間，<b>6/29 9:30 前完成還車</b>。從 THE GARDEN 出發約 3 分鐘、距離約 500 公尺，還車後步行 2 分鐘即可到河口湖車站，接高速巴士往東京／池袋。</div><div class="tags"><span class="tag transit">🚗 9:30 還車</span></div></li>
-      <li class="event transit"><div class="time">09:30 – 11:10</div><div class="title">🚌 河口湖 → <a class="gmap" href="https://maps.google.com/?q=バスタ新宿" target="_blank">バスタ新宿</a>（高速巴士）</div></li>
-      <li class="event transit"><div class="time">11:10 – 11:45</div><div class="title">🚇 新宿 → 池袋 + <a class="gmap" href="https://maps.google.com/?q=MIMARU東京池袋" target="_blank">MIMARU</a> 寄物</div><div class="tags"><span class="tag buffer">buffer +15 min</span></div></li>
-      <li class="event meal"><div class="time">11:45 – 13:00</div><div class="title">🍜 午餐 · 池袋名店</div><div class="desc">
+      <li class="event transit"><div class="time">10:50 – 12:35</div><div class="title">🚌 河口湖 → <a class="gmap" href="https://maps.google.com/?q=バスタ新宿" target="_blank">バスタ新宿</a>（高速巴士） <span class="tag highlight">Day 4 車票</span></div></li>
+      <li class="event transit"><div class="time">12:35 – 13:05</div><div class="title">🚇 新宿 → <a class="gmap" href="https://maps.google.com/?q=MIMARU東京池袋" target="_blank">MIMARU</a> 寄物</div><div class="tags"><span class="tag buffer">buffer +15 min</span></div></li>
+      <li class="event meal"><div class="time">13:10 – 14:10</div><div class="title">🍜 午餐 · 池袋名店</div><div class="desc">
         ① <a class="gmap" href="https://maps.google.com/?q=無敵家+池袋" target="_blank">無敵家</a><br>
         ② <a class="gmap" href="https://maps.google.com/?q=大勝軒+池袋本店" target="_blank">大勝軒</a><br>
         ③ <a class="gmap" href="https://maps.google.com/?q=西武池袋本店" target="_blank">西武 B1 食品街</a>
       </div></li>
-      <li class="event highlight"><div class="time">13:00 – 15:00</div><div class="title">🛍 ① <a class="gmap" href="https://maps.google.com/?q=西武池袋本店" target="_blank">池袋西武百貨</a></div><div class="desc">B1 食品、7-8F Loft、10F 美術館、屋頂花園。</div></li>
-      <li class="event highlight"><div class="time">15:10 – 16:10</div><div class="title">👕 ② <a class="gmap" href="https://maps.google.com/?q=ユニクロ+池袋東口店" target="_blank">UNIQLO 池袋東口店</a></div><div class="desc">サンシャイン60通り，日本限定 UT + 童裝。</div></li>
-      <li class="event highlight"><div class="time">16:20 – 18:20</div><div class="title">⚡ ③ <a class="gmap" href="https://maps.google.com/?q=ポケモンセンターメガトウキョー" target="_blank">Pokemon Center MEGA TOKYO</a></div><div class="desc">太陽城 2F，Pikachu 合照 + 東京限定。</div></li>
-      <li class="event highlight"><div class="time">18:30 – 19:30</div><div class="title">💊 ④ <a class="gmap" href="https://maps.google.com/?q=マツモトキヨシ+池袋東口本店" target="_blank">松本清 池袋東口本店</a></div></li>
-      <li class="event meal"><div class="time">19:30 – 21:30</div><div class="title">🍻 ⑤ <a class="gmap" href="https://maps.google.com/?q=鳥貴族+池袋東口店" target="_blank">鳥貴族 池袋東口店</a>（晚餐）</div><div class="desc">均一 ¥370 居酒屋。建議 19:30 前進場。線上訂位：TableCheck。</div><div class="tags"><span class="tag meal">鳥貴族</span></div></li>
-      <li class="event lodging"><div class="time">21:45</div><div class="title">🏨 正式 Check-in · MIMARU 池袋</div></li>
+      <li class="event highlight"><div class="time">14:15 – 16:15</div><div class="title">🛍 ① <a class="gmap" href="https://maps.google.com/?q=西武池袋本店" target="_blank">池袋西武百貨</a></div><div class="desc">B1 食品、7-8F Loft、10F 美術館、屋頂花園。</div></li>
+      <li class="event highlight"><div class="time">16:20 – 17:20</div><div class="title">👕 ② <a class="gmap" href="https://maps.google.com/?q=ユニクロ+池袋東口店" target="_blank">UNIQLO 池袋東口店</a></div><div class="desc">サンシャイン60通り，日本限定 UT + 童裝。</div></li>
+      <li class="event highlight"><div class="time">17:30 – 19:30</div><div class="title">⚡ ③ <a class="gmap" href="https://maps.google.com/?q=ポケモンセンターメガトウキョー" target="_blank">Pokemon Center MEGA TOKYO</a></div><div class="desc">太陽城 2F，Pikachu 合照 + 東京限定。</div></li>
+      <li class="event highlight"><div class="time">19:45 – 20:45</div><div class="title">💊 ④ <a class="gmap" href="https://maps.google.com/?q=マツモトキヨシ+池袋東口本店" target="_blank">松本清 池袋東口本店</a></div></li>
+      <li class="event meal"><div class="time">21:00 – 22:00</div><div class="title">🍻 ⑤ <a class="gmap" href="https://maps.google.com/?q=鳥貴族+池袋東口店" target="_blank">鳥貴族 池袋東口店</a>（晚餐）</div><div class="desc">均一 ¥370 居酒屋，小孩也適合吃串燒。強烈建議出發前一週官網訂位。<br><span style="color:#666;font-size:12px">備案選擇：<a class="gmap" href="https://maps.google.com/?q=焼肉ライ克+池袋東口店" target="_blank">燒肉 LIKE</a>（單人烤肉對小孩很有趣）／<a class="gmap" href="https://maps.google.com/?q=無添くら寿司+池袋東口店" target="_blank">藏壽司 池袋東口</a>（扭蛋壽司）／<a class="gmap" href="https://maps.google.com/?q=屯ちん+池袋本店" target="_blank">屯京拉麵 本店</a></span></div><div class="tags"><span class="tag meal">鳥貴族</span></div></li>
+      <li class="event lodging"><div class="time">22:10</div><div class="title">🏨 正式 Check-in · MIMARU 池袋</div></li>
     </ol>
+    <a class="route-btn-large d4-btn" href="https://www.google.com/maps/dir/西武池袋本店/ユニクロ+池袋東口店/ポケモンセンターメガトウキョー/マツモトキヨシ+池袋東口本店/鳥貴族+池袋東口店/MIMARU東京池袋" target="_blank">🗺 Day 4 整日路線導航</a>
     <details class="rain"><summary>雨天備案 Day 4</summary><div class="body">池袋東口幾乎全地下街串聯，雨天影響最小。</div></details>
   </section>
 
@@ -425,87 +402,98 @@
     <ol class="timeline">
       <li class="event meal"><div class="time">08:30 – 09:30</div><div class="title">☕ 公寓早餐</div></li>
       <li class="event transit"><div class="time">09:30 – 09:55</div><div class="title">🚇 池袋 → <a class="gmap" href="https://maps.google.com/?q=明治神宮前駅" target="_blank">明治神宮前</a>（副都心線 16 min）</div></li>
-      <li class="event highlight"><div class="time">10:00 – 11:30</div><div class="title">🧸 <a class="gmap" href="https://maps.google.com/?q=KIDDY+LAND+原宿表参道" target="_blank">KIDDY LAND 表參道旗艦</a></div></li>
-      <li class="event highlight"><div class="time">11:30 – 12:15</div><div class="title">🏛 <a class="gmap" href="https://maps.google.com/?q=GYRE+表参道" target="_blank">GYRE</a> 地標建築</div><div class="desc">MVRDV 設計的螺旋形複合商業大樓。1F <b>MoMA Design Store</b>（紀念品首選）、3F <b>CHANEL Nexus Hall</b>（免費展覽）。從 KIDDY LAND 步行約 2 分鐘。</div></li>
-      <li class="event highlight"><div class="time">12:15 – 13:00</div><div class="title">🛍 <a class="gmap" href="https://maps.google.com/?q=表参道ヒルズ" target="_blank">表參道 Hills</a> 漫步</div></li>
-      <li class="event meal"><div class="time">13:00 – 14:15</div><div class="title">🍝 午餐 ·
-        <a class="gmap" href="https://maps.google.com/?q=AFURI+原宿" target="_blank">AFURI</a> /
-        <a class="gmap" href="https://maps.google.com/?q=Eggs+n+Things+原宿" target="_blank">Eggs 'n Things</a> /
-        <a class="gmap" href="https://maps.google.com/?q=GYRE.FOOD+表参道" target="_blank">GYRE.FOOD（GYRE B1F）</a>
+      <li class="event highlight"><div class="time">10:00 – 11:15</div><div class="title">🧸 <a class="gmap" href="https://maps.google.com/?q=KIDDY+LAND+原宿表参道" target="_blank">KIDDY LAND 表參道旗艦</a></div><div class="desc">10 歲男孩最愛，各類動漫與角色周邊齊全。</div></li>
+      <li class="event highlight"><div class="time">11:15 – 12:15</div><div class="title">👕 <a class="gmap" href="https://maps.google.com/?q=ポロ+ラルフ+ローレン+表参道" target="_blank">Polo Ralph Lauren 表參道總店</a></div><div class="desc">旗艦大店，有客製化服務 (Create Your Own) 與 Ralph's Coffee。</div><div class="tags"><span class="tag highlight">旗艦店</span></div></li>
+      <li class="event meal"><div class="time">12:15 – 13:30</div><div class="title">🍝 午餐 · 原宿周邊</div><div class="desc">
+        <a class="gmap" href="https://maps.google.com/?q=AFURI+原宿" target="_blank">AFURI 原宿</a> (柚子鹽拉麵) /
+        <a class="gmap" href="https://maps.google.com/?q=レッドロック+原宿店" target="_blank">Red Rock 原宿</a> (烤牛肉丼，男孩會愛) /
+        <a class="gmap" href="https://maps.google.com/?q=ラルフズ+コーヒー+表参道" target="_blank">Ralph's Coffee</a> (簡餐)
       </div></li>
-      <li class="event highlight"><div class="time">14:15 – 15:30</div><div class="title">👕 <a class="gmap" href="https://maps.google.com/?q=BEAMS+原宿" target="_blank">BEAMS 原宿</a></div></li>
-      <li class="event highlight"><div class="time">15:30 – 16:30</div><div class="title">☕ <a class="gmap" href="https://maps.google.com/?q=3COINS+青山" target="_blank">3COINS 青山</a> + 表參道</div></li>
-      <li class="event meal"><div class="time">16:30 – 17:30</div><div class="title">🍰 下午茶</div></li>
-      <li class="event transit"><div class="time">17:30 – 18:00</div><div class="title">🚇 表參道 → 池袋</div></li>
-      <li class="event meal"><div class="time">19:00 – 20:30</div><div class="title">🍖 晚餐 · 
-        <a class="gmap" href="https://maps.google.com/?q=叙々苑+池袋" target="_blank">敘敘苑 池袋</a> / 
-        <a class="gmap" href="https://maps.google.com/?q=蟹道楽+池袋" target="_blank">蟹道楽 池袋</a>
-      </div></li>
+      <li class="event highlight"><div class="time">13:30 – 15:00</div><div class="title">🛍 表參道大人逛街時間</div><div class="desc">
+        ① <a class="gmap" href="https://maps.google.com/?q=表参道ヒルズ" target="_blank">表參道 Hills</a><br>
+        ② <a class="gmap" href="https://maps.google.com/?q=GYRE+表参道" target="_blank">GYRE</a> (MoMA Design Store)<br>
+        ③ <a class="gmap" href="https://maps.google.com/?q=BEAMS+原宿" target="_blank">BEAMS 原宿</a>
+      </div><div class="tags"><span class="tag buffer">大人逛街</span></div></li>
+      <li class="event highlight"><div class="time">15:15 – 17:30</div><div class="title">🎮 男孩的天堂 · <a class="gmap" href="https://maps.google.com/?q=渋谷PARCO" target="_blank">Shibuya PARCO (6F)</a> 或 <a class="gmap" href="https://maps.google.com/?q=MIYASHITA+PARK" target="_blank">MIYASHITA PARK</a></div><div class="desc">沿著貓街走往澀谷方向。PARCO 6F 有全日本最大的 <b>Nintendo Tokyo</b> 與 <b>寶可夢中心</b>，10 歲男孩保證瘋狂。宮下公園 (MIYASHITA PARK) 則是結合潮流店鋪與頂樓公園的超酷地標。</div><div class="tags"><span class="tag highlight">男孩最愛</span></div></li>
+      <li class="event meal"><div class="time">18:00 – 19:30</div><div class="title">🍖 晚餐 · 原宿/澀谷周邊</div><div class="desc">
+        直接在這邊吃晚餐，不用回池袋人擠人！<br>
+        ① <a class="gmap" href="https://maps.google.com/?q=KINTAN+表参道" target="_blank">表參道燒肉 KINTAN</a>：高質感的和牛午餐/晚餐，極度推薦（需線上訂位）。<br>
+        ② <a class="gmap" href="https://maps.google.com/?q=渋谷横丁+MIYASHITA+PARK" target="_blank">澀谷橫丁 (MIYASHITA PARK內)</a>：匯集全日本美食的祭典感美食街，氣氛極佳。
+      </div><div class="tags"><span class="tag meal">燒肉/美食街</span></div></li>
+      <li class="event transit"><div class="time">19:30 – 20:00</div><div class="title">🚇 澀谷/原宿 → 池袋</div><div class="tags"><span class="tag transit">副都心線</span></div></li>
     </ol>
+    <a class="route-btn-large d5-btn" href="https://www.google.com/maps/dir/明治神宮前駅/KIDDY+LAND+原宿表参道/ポロ+ラルフ+ローレン+表参道/表参道ヒルズ/BEAMS+原宿/渋谷PARCO" target="_blank">🗺 Day 5 整日路線導航</a>
   </section>
 
   <!-- ============ DAY 6 ============ -->
   <section class="panel" data-day="6">
     <div class="day-head"><h2>Day 6 · 森美術館 × 21_21 × 返台</h2><div class="date">2026/07/01 · 星期三</div></div>
-    <div class="hotel-pill">🏨 當日 Check-out：帶行李出發，放 <a class="gmap" href="https://maps.google.com/?q=六本木ヒルズ+ウェストウォーク" target="_blank">Hills ウェストウォーク 3F</a> コインロッカー，不回池袋</div>
-    <div class="day-theme"><b>53F 高空展覽 + 設計美術館</b>。行李直接放六本木 Hills，參觀完後直奔成田。</div>
-    <div class="buffer-note"><b>🧳 コインロッカー：</b>ウェストウォーク 3F（最推薦）或 けやき坂コンプレックス B2（特大型）· 大型 ¥700/件 · Suica 可付 · 28 吋行李箱可放。</div>
+    <div class="hotel-pill">🏨 當日 Check-out：帶行李搭車，先放 <a class="gmap" href="https://maps.google.com/?q=日暮里駅" target="_blank">日暮里站</a> 置物櫃，空手逛六本木</div>
+    <div class="day-theme"><b>53F 高空展覽 + 設計美術館</b>。完美避開帶著 4 咖行李搭地鐵的折磨，從日暮里直達機場最順暢。</div>
+    <div class="buffer-note"><b>🧳 日暮里車站寄物：</b>JR 日暮里站北改札內有多處置物櫃，Skyliner 轉乘口旁也有大型置物櫃。</div>
     <ol class="timeline">
-      <li class="event meal"><div class="time">07:00 – 08:00</div><div class="title">🥐 早餐 + 打包（全部行李帶走）</div></li>
-      <li class="event lodging"><div class="time">09:00 – 09:30</div><div class="title">🏨 Check-out · MIMARU 池袋 + 出發準備</div><div class="desc">09:00 辦理退房，09:30 出發可避開通勤尖峰，帶大行李搭車較舒適。</div></li>
+      <li class="event meal"><div class="time">07:30 – 08:30</div><div class="title">🥐 早餐 + 打包（全部行李帶走）</div></li>
+      <li class="event lodging"><div class="time">08:30 – 09:00</div><div class="title">🏨 Check-out · MIMARU 池袋 + 出發準備</div><div class="desc">退房，帶大行李前往車站。</div></li>
       <li class="event transit">
-        <div class="time">09:30 – 10:10（40 min）</div>
-        <div class="title">🚇 池袋 → <a class="gmap" href="https://maps.google.com/?q=六本木駅" target="_blank">六本木</a></div>
-        <div class="desc">副都心線 → 渋谷 換乘 日比谷線 → 六本木 2 號出口 → 步行 5 分到 Hills。</div>
-        <div class="tags"><span class="tag transit">副都心線 + 日比谷線</span></div>
+        <div class="time">09:00 – 09:20（20 min）</div>
+        <div class="title">🚇 池袋 → <a class="gmap" href="https://maps.google.com/?q=日暮里駅" target="_blank">日暮里</a></div>
+        <div class="desc">山手線外回直達（約 12 分鐘）。</div>
+        <div class="tags"><span class="tag transit">山手線</span></div>
       </li>
       <li class="event locker">
-        <div class="time">10:10 – 10:20</div>
-        <div class="title">🧳 行李放 <a class="gmap" href="https://maps.google.com/?q=六本木ヒルズ+ウェストウォーク" target="_blank">ウェストウォーク 3F</a> コインロッカー</div>
-        <div class="desc">大型（幅 355×奥行 575×高 843mm）¥700/件 · Suica 可 · 313 台。</div>
+        <div class="time">09:20 – 09:40</div>
+        <div class="title">🧳 行李放 <a class="gmap" href="https://maps.google.com/?q=日暮里駅" target="_blank">日暮里站</a> 置物櫃</div>
+        <div class="desc">先卸下重擔！大型 ¥700/件 · Suica 可付。</div>
+      </li>
+      <li class="event transit">
+        <div class="time">09:40 – 10:20（40 min）</div>
+        <div class="title">🚇 日暮里 → <a class="gmap" href="https://maps.google.com/?q=六本木駅" target="_blank">六本木</a></div>
+        <div class="desc">日暮里（山手線）→ 上野 換乘 日比谷線 → 六本木。空手搭車超輕鬆。</div>
+        <div class="tags"><span class="tag transit">山手線 + 日比谷線</span></div>
       </li>
       <li class="event highlight">
-        <div class="time">10:20 – 12:20（2h）</div>
+        <div class="time">10:30 – 12:30（2h）</div>
         <div class="title">🎨 <a class="gmap" href="https://maps.google.com/?q=森美術館+六本木ヒルズ" target="_blank">森美術館（53F）</a> + 東京シティビュー</div>
         <div class="desc">同票包含展望台。大人 ¥2,300（線上 ¥2,100）· <b>小學生免費</b>。行前查當期展覽：mori.art.museum</div>
         <div class="tags"><span class="tag highlight">展覽</span><span class="tag highlight">展望台</span></div>
       </li>
       <li class="event meal">
-        <div class="time">12:20 – 13:20</div>
+        <div class="time">12:30 – 13:30</div>
         <div class="title">🍽 午餐 · <a class="gmap" href="https://maps.google.com/?q=六本木ヒルズ" target="_blank">Hills B1–3F</a></div>
         <div class="desc">輕食到正餐都有，不出 Hills 最方便。</div>
         <div class="tags"><span class="tag meal">Hills 內</span></div>
       </li>
-      <li class="event transit"><div class="time">13:20 – 13:30</div><div class="title">🚶 步行約 10 分 → 東京ミッドタウン</div><div class="desc">沿 けやき坂通り 往北走，往赤坂方向。</div></li>
+      <li class="event transit"><div class="time">13:30 – 13:40</div><div class="title">🚶 步行約 10 分 → 東京ミッドタウン</div><div class="desc">沿 けやき坂通り 往北走，往赤坂方向。</div></li>
       <li class="event highlight">
-        <div class="time">13:30 – 15:00（1.5h）</div>
+        <div class="time">13:40 – 15:10（1.5h）</div>
         <div class="title">🖌 <a class="gmap" href="https://maps.google.com/?q=21_21+DESIGN+SIGHT" target="_blank">21_21 DESIGN SIGHT</a>（東京ミッドタウン内）</div>
         <div class="desc">安藤忠雄設計建築 · 設計展覽。大人 ¥1,400 · <b>小學生免費</b>。行前查：2121designsight.jp</div>
         <div class="tags"><span class="tag highlight">設計展</span><span class="tag buffer">小孩免費</span></div>
       </li>
       <li class="event highlight">
-        <div class="time">15:00 – 16:15</div>
+        <div class="time">15:10 – 16:15</div>
         <div class="title">🛍 <a class="gmap" href="https://maps.google.com/?q=東京ミッドタウン+ガレリア" target="_blank">東京ミッドタウン Galleria</a> 散步</div>
         <div class="desc">精品與生活選品、ミッドタウン ガーデン 草坪，輕鬆收尾。</div>
       </li>
-      <li class="event locker">
-        <div class="time">16:15 – 16:35</div>
-        <div class="title">🧳 步行回 Hills 取行李（ウェストウォーク 3F）</div>
-      </li>
       <li class="event transit">
-        <div class="time">16:40 – 17:15（35 min）</div>
-        <div class="title">🚇 <a class="gmap" href="https://maps.google.com/?q=六本木駅" target="_blank">六本木</a> → 日比谷線 → 秋葉原（25 min）→ JR 1 站 → <a class="gmap" href="https://maps.google.com/?q=日暮里駅" target="_blank">日暮里</a></div>
-        <div class="desc">※ 秋葉原経由が最速ルート。上野経由より約 10 分短縮。</div>
-        <div class="tags"><span class="tag transit">日比谷線 → JR</span></div>
+        <div class="time">16:20 – 16:55（35 min）</div>
+        <div class="title">🚇 <a class="gmap" href="https://maps.google.com/?q=六本木駅" target="_blank">六本木</a> → 日比谷線 → 上野 → 山手線 1 站 → <a class="gmap" href="https://maps.google.com/?q=日暮里駅" target="_blank">日暮里</a></div>
+        <div class="desc">空手搭地鐵回去拿行李。</div>
+        <div class="tags"><span class="tag transit">日比谷線 → 山手線</span></div>
+      </li>
+      <li class="event locker">
+        <div class="time">16:55 – 17:15</div>
+        <div class="title">🧳 日暮里站取行李 + 轉乘 Skyliner</div>
       </li>
       <li class="event transit">
         <div class="time">17:30 – 18:11（41 min）</div>
         <div class="title">🚄 Skyliner → <a class="gmap" href="https://maps.google.com/?q=成田国際空港第2ターミナル" target="_blank">成田 T2</a></div>
         <div class="tags"><span class="tag transit">Skyliner ✅ 建議預約</span></div>
       </li>
-      <li class="event transit"><div class="time">18:11 – 20:10</div><div class="title">🧾 退稅 × 出境 × 候機</div><div class="desc">退稅櫃台常排隊，建議起飛前 2 小時到達。成田 18:11 抵達，距班機 2h 29min 充裕。</div></li>
+      <li class="event transit"><div class="time">18:11 – 20:10</div><div class="title">🧾 退稅 × 出境 × 候機</div><div class="desc">成田 18:11 抵達，距班機 2.5h，時間非常充裕。</div></li>
       <li class="event transit"><div class="time">20:40 – 23:20（2h 40m）</div><div class="title">✈ JX805 東京成田 NRT → 台北 TPE T1</div><div class="desc">Airbus A321neo · 經濟艙 N · 訂位代號：<b>D7ZP8F</b></div><div class="tags"><span class="tag transit">星宇航空</span></div></li>
     </ol>
+    <a class="route-btn-large d6-btn" href="https://www.google.com/maps/dir/池袋駅/日暮里駅/六本木ヒルズ/森美術館/21_21+DESIGN+SIGHT/東京ミッドタウン/日暮里駅/成田国際空港第2ターミナル" target="_blank">🗺 Day 6 整日路線導航</a>
   </section>
 
   <!-- ============ HOTELS ============ -->
@@ -556,6 +544,19 @@
   <section class="panel" data-day="info">
     <div class="day-head"><h2>📋 預訂 × 清單</h2><div class="date">checklist</div></div>
 
+    <div class="section-title">🚗 租車資訊（已預約）</div>
+    <div class="hotel-card">
+      <div class="htitle"><h3>Nippon Rent-A-Car（日本租車）</h3><span class="nights" style="background:var(--highlight-soft);color:var(--highlight);border-color:#b8e2cc">已線上付款</span></div>
+      <div class="info">
+        <div><div class="k">預約號碼</div><div class="v">N41411</div></div>
+        <div><div class="k">駕駛員</div><div class="v">YINGCHUNGLAN</div></div>
+        <div><div class="k">取車</div><div class="v">6/28 11:30 · 河口湖駅前營業處</div></div>
+        <div><div class="k">還車</div><div class="v">6/29 11:30 · 河口湖駅前營業處</div></div>
+        <div><div class="k">方案與費用</div><div class="v">安心方案 (Intermediate) · ¥16,720</div></div>
+        <div><div class="k">聯絡電話</div><div class="v">050-1712-2693</div></div>
+      </div>
+    </div>
+
     <div class="section-title">🎟 行前預訂</div>
     <div class="grid2">
       <div class="card-box"><h3>已完成 ✅</h3>
@@ -570,11 +571,11 @@
       <div class="card-box"><h3>待處理</h3>
         <ul class="checklist">
           <li><label><input type="checkbox" checked> 機票 · 星宇 JX800/JX805（訂位代號 D7ZP8F）</label></li>
-          <li><label><input type="checkbox"> Day 3 租車 or 周遊巴士</label></li>
+          <li><label><input type="checkbox" checked> Day 3 租車預約 (N41411)</label></li>
           <li><label><input type="checkbox"> 富士急 e 門票</label></li>
           <li><label><input type="checkbox"> Day 4 河口湖→新宿 高速巴士</label></li>
           <li><label><input type="checkbox"> Day 2 富士急→MYSTAYS 接駁</label></li>
-          <li><label><input type="checkbox"> Day 3 ほうとう蔵 歩成 訂位</label></li>
+          <li><label><input type="checkbox"> Day 3 餺飥不動 東戀路店（現場排隊）</label></li>
           <li><label><input type="checkbox"> Day 4 鳥貴族 訂位</label></li>
           <li><label><input type="checkbox"> Day 6 森美術館展覽查詢（mori.art.museum）</label></li>
           <li><label><input type="checkbox"> Day 6 21_21 DESIGN SIGHT 展覽查詢（2121designsight.jp）</label></li>
@@ -662,98 +663,6 @@
         <li><b>健保海外給付：</b>小孩就醫先墊付，回台後帶收據+診斷書+護照申請部分給付。</li>
       </ul>
     </div>
-  </section>
-
-  <!-- ============ MAP OVERVIEW ============ -->
-  <section class="panel" data-day="map">
-    <div class="day-head"><h2>🗺 地圖總覽</h2><div class="date">分色旗 × 活動範圍</div></div>
-    <div class="day-theme">每天一個顏色旗，點地點直接跳 Google Maps；每卡底部「整日路線」開 Google Maps 連續導航。</div>
-    <div class="map-legend">
-      <span class="legend-item"><span class="flag" style="background:var(--d1)"></span>Day 1 抵達</span>
-      <span class="legend-item"><span class="flag" style="background:var(--d2)"></span>Day 2 富士急</span>
-      <span class="legend-item"><span class="flag" style="background:var(--d3)"></span>Day 3 富士五湖</span>
-      <span class="legend-item"><span class="flag" style="background:var(--d4)"></span>Day 4 池袋</span>
-      <span class="legend-item"><span class="flag" style="background:var(--d5)"></span>Day 5 表參道</span>
-      <span class="legend-item"><span class="flag" style="background:var(--d6)"></span>Day 6 六本木</span>
-    </div>
-
-    <div class="map-grid">
-      <div class="day-map-card">
-        <div class="hd"><h3>🔴 Day 1 · 抵達</h3><span class="n">新宿→澀谷軸</span></div>
-        <ul>
-          <li><a class="gmap" href="https://maps.google.com/?q=成田国際空港第2ターミナル" target="_blank">成田機場 T2</a></li>
-          <li><a class="gmap" href="https://maps.google.com/?q=新宿駅南口" target="_blank">新宿站南口（寄物）</a></li>
-          <li><a class="gmap" href="https://maps.google.com/?q=NEWoMan+新宿" target="_blank">NEWoMan 新宿</a></li>
-          <li><a class="gmap" href="https://maps.google.com/?q=相鉄グランドフレッサ高田馬場" target="_blank">🏨 相鐵 Grand Fresa</a></li>
-        </ul>
-        <a class="route-btn" href="https://www.google.com/maps/dir/成田国際空港/新宿駅/NEWoMan+新宿/相鉄グランドフレッサ高田馬場" target="_blank">🗺 整日路線</a>
-      </div>
-
-      <div class="day-map-card d2">
-        <div class="hd"><h3>🟠 Day 2 · 富士急</h3><span class="n">新宿→富士吉田</span></div>
-        <ul>
-          <li><a class="gmap" href="https://maps.google.com/?q=新宿駅" target="_blank">新宿站（08:30 富士回遊）</a></li>
-          <li><a class="gmap" href="https://maps.google.com/?q=富士急ハイランド" target="_blank">富士急樂園</a></li>
-          <li><a class="gmap" href="https://maps.google.com/?q=HOTEL+MYSTAYS+Fuji+Onsen+Resort" target="_blank">🏨 MYSTAYS Fuji Onsen</a></li>
-        </ul>
-        <a class="route-btn" href="https://www.google.com/maps/dir/新宿駅/富士急ハイランド/HOTEL+MYSTAYS+Fuji+Onsen+Resort" target="_blank">🗺 整日路線</a>
-      </div>
-
-      <div class="day-map-card d3">
-        <div class="hd"><h3>🟡 Day 3 · 富士五湖</h3><span class="n">山上→富士吉田→河口湖</span></div>
-        <ul>
-          <li><a class="gmap" href="https://maps.google.com/?q=新屋山神社+本宮" target="_blank">💰 新屋山神社（二合目）</a></li>
-          <li><a class="gmap" href="https://maps.google.com/?q=新倉富士浅間神社+忠霊塔" target="_blank">🗻 新倉富士淺間神社</a></li>
-          <li><a class="gmap" href="https://maps.google.com/?q=ほうとう蔵+歩成+富士吉田店" target="_blank">🍜 ほうとう蔵 歩成</a></li>
-          <li><a class="gmap" href="https://maps.google.com/?q=富士吉田+本町通り" target="_blank">🛍 富士吉田本町通り</a></li>
-          <li><a class="gmap" href="https://maps.google.com/?q=河口湖自然生活館" target="_blank">🌸 河口湖自然生活館</a></li>
-          <li><a class="gmap" href="https://maps.google.com/?q=オギノ+河口湖店" target="_blank">🛒 Ogino 河口湖店</a></li>
-          <li><a class="gmap" href="https://maps.google.com/?q=THE+GARDEN+河口湖" target="_blank">🏨 THE GARDEN</a></li>
-        </ul>
-        <a class="route-btn" href="https://www.google.com/maps/dir/新屋山神社+本宮/新倉富士浅間神社/ほうとう蔵+歩成+富士吉田店/富士吉田本町通り/河口湖自然生活館/オギノ+河口湖店/THE+GARDEN+河口湖" target="_blank">🗺 整日路線</a>
-      </div>
-
-      <div class="day-map-card d4">
-        <div class="hd"><h3>🟣 Day 4 · 池袋掃街</h3><span class="n">東口 L 型</span></div>
-        <ul>
-          <li><a class="gmap" href="https://maps.google.com/?q=西武池袋本店" target="_blank">西武百貨</a></li>
-          <li><a class="gmap" href="https://maps.google.com/?q=ユニクロ+池袋東口店" target="_blank">UNIQLO 東口旗艦</a></li>
-          <li><a class="gmap" href="https://maps.google.com/?q=ポケモンセンターメガトウキョー" target="_blank">Pokemon Center MEGA</a></li>
-          <li><a class="gmap" href="https://maps.google.com/?q=マツモトキヨシ+池袋東口本店" target="_blank">松本清東口</a></li>
-          <li><a class="gmap" href="https://maps.google.com/?q=鳥貴族+池袋東口店" target="_blank">🍗 鳥貴族</a></li>
-          <li><a class="gmap" href="https://maps.google.com/?q=MIMARU東京池袋" target="_blank">🏨 MIMARU 池袋</a></li>
-        </ul>
-        <a class="route-btn" href="https://www.google.com/maps/dir/西武池袋本店/ユニクロ+池袋東口店/ポケモンセンターメガトウキョー/マツモトキヨシ+池袋東口本店/鳥貴族+池袋東口店/MIMARU東京池袋" target="_blank">🗺 整日路線</a>
-      </div>
-
-      <div class="day-map-card d5">
-        <div class="hd"><h3>🔵 Day 5 · 表參道</h3><span class="n">副都心直達</span></div>
-        <ul>
-          <li><a class="gmap" href="https://maps.google.com/?q=明治神宮前駅" target="_blank">明治神宮前站</a></li>
-          <li><a class="gmap" href="https://maps.google.com/?q=KIDDY+LAND+原宿表参道" target="_blank">KIDDY LAND</a></li>
-          <li><a class="gmap" href="https://maps.google.com/?q=GYRE+表参道" target="_blank">GYRE（MVRDV）</a></li>
-          <li><a class="gmap" href="https://maps.google.com/?q=表参道ヒルズ" target="_blank">表參道 Hills</a></li>
-          <li><a class="gmap" href="https://maps.google.com/?q=BEAMS+原宿" target="_blank">BEAMS 原宿</a></li>
-          <li><a class="gmap" href="https://maps.google.com/?q=3COINS+青山" target="_blank">3COINS 青山</a></li>
-        </ul>
-        <a class="route-btn" href="https://www.google.com/maps/dir/明治神宮前駅/KIDDY+LAND+原宿表参道/GYRE+表参道/表参道ヒルズ/BEAMS+原宿/3COINS+青山" target="_blank">🗺 整日路線</a>
-      </div>
-
-      <div class="day-map-card d6">
-        <div class="hd"><h3>🟢 Day 6 · 回國</h3><span class="n">六本木→成田</span></div>
-        <ul>
-          <li><a class="gmap" href="https://maps.google.com/?q=六本木ヒルズ+ウェストウォーク" target="_blank">🧳 Hills ウェストウォーク（行李）</a></li>
-          <li><a class="gmap" href="https://maps.google.com/?q=森美術館+六本木ヒルズ" target="_blank">🎨 森美術館（53F）</a></li>
-          <li><a class="gmap" href="https://maps.google.com/?q=21_21+DESIGN+SIGHT" target="_blank">🖌 21_21 DESIGN SIGHT</a></li>
-          <li><a class="gmap" href="https://maps.google.com/?q=東京ミッドタウン+ガレリア" target="_blank">東京ミッドタウン Galleria</a></li>
-          <li><a class="gmap" href="https://maps.google.com/?q=日暮里駅" target="_blank">日暮里站（Skyliner）</a></li>
-          <li><a class="gmap" href="https://maps.google.com/?q=成田国際空港第2ターミナル" target="_blank">🛫 成田 T2</a></li>
-        </ul>
-        <a class="route-btn" href="https://www.google.com/maps/dir/六本木ヒルズ/森美術館/21_21+DESIGN+SIGHT/東京ミッドタウン/日暮里駅/成田国際空港第2ターミナル" target="_blank">🗺 整日路線</a>
-      </div>
-    </div>
-
-    <div class="foot">💡 想做完整 Google My Maps 一張圖？我可以匯出 CSV/KML 讓你一次匯入 40+ 景點，分色圖釘分享給旅伴共同編輯。</div>
   </section>
 
 </div>
