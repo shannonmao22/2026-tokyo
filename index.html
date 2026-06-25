@@ -67,6 +67,11 @@
   .tag.buffer{background:var(--buffer-soft);color:var(--buffer);border-color:#efe3a0}
   .tag.locker{background:var(--locker-soft);color:var(--locker);border-color:#f0d4b0}
 
+  .navi-bar{display:flex;flex-wrap:wrap;gap:6px;margin-top:8px;align-items:center}
+  .navi-btn{display:inline-flex;align-items:center;gap:4px;background:var(--transit);color:#fff;padding:5px 11px;border-radius:999px;font-size:11.5px;font-weight:600;text-decoration:none;white-space:nowrap}
+  .navi-btn:active{opacity:.7}
+  .mapcode{display:inline-flex;align-items:center;gap:3px;background:#f5f5f0;border:1px solid var(--line);padding:4px 9px;border-radius:999px;font-size:11px;font-family:"SF Mono","Menlo","Courier New",monospace;color:#555;letter-spacing:.03em;white-space:nowrap}
+
   .locker-card{background:var(--locker-soft);border:1px solid #f0d4b0;border-radius:12px;padding:14px 16px;margin-bottom:12px}
   .locker-card h3{margin:0 0 8px;font-size:15px;color:var(--locker)}
   .locker-card h4{margin:10px 0 4px;font-size:13px;color:var(--locker)}
@@ -210,8 +215,9 @@
       <div class="info">
         <div><div class="k">出發</div><div class="v">08:30 TPE 桃園機場 T1</div></div>
         <div><div class="k">抵達</div><div class="v">12:55 NRT 東京成田機場 T2</div></div>
-        <div><div class="k">機型</div><div class="v">Airbus A350-900</div></div>
+        <div><div class="k">機型</div><div class="v">Airbus A350-1000</div></div>
         <div><div class="k">艙等 / 行李</div><div class="v">經濟艙 N · 託運 1 件/人</div></div>
+        <div><div class="k">飛行時間</div><div class="v">3 小時 25 分</div></div>
       </div>
     </div>
 
@@ -220,9 +226,33 @@
       <div class="info">
         <div><div class="k">出發</div><div class="v">20:40 NRT 東京成田機場 T2</div></div>
         <div><div class="k">抵達</div><div class="v">23:20 TPE 桃園機場 T1</div></div>
-        <div><div class="k">機型</div><div class="v">Airbus A321neo</div></div>
+        <div><div class="k">機型</div><div class="v">Airbus A330-900neo</div></div>
         <div><div class="k">艙等 / 行李</div><div class="v">經濟艙 N · 託運 1 件/人</div></div>
+        <div><div class="k">飛行時間</div><div class="v">3 小時 40 分</div></div>
       </div>
+    </div>
+
+    <div class="section-title">👥 旅客資訊</div>
+    <table>
+      <tr><th>姓名</th><th>機票號碼</th><th>備註</th></tr>
+      <tr><td>MAO / WANCHEN</td><td>1896327608366</td><td></td></tr>
+      <tr><td>LAN / YINGCHUNG</td><td>1896327608367</td><td></td></tr>
+      <tr><td>LAN / YIJIE</td><td>1896327608368</td><td>JX800 · JX805 兒童餐</td></tr>
+      <tr><td>LAN / YIKAI</td><td>1896327608369</td><td>JX800 · JX805 兒童餐</td></tr>
+    </table>
+
+    <div class="section-title">🚌 高速巴士 · 河口湖 → 新宿</div>
+    <div class="hotel-card">
+      <div class="htitle"><h3>富士急行 1402 便</h3><span class="nights" style="background:var(--transit-soft);color:var(--transit);border-color:#c9ddff">6/29（一）</span></div>
+      <div class="info">
+        <div><div class="k">路線</div><div class="v">河口湖駅 → バスタ新宿（南口）</div></div>
+        <div><div class="k">出發</div><div class="v">10:50（1 號車）</div></div>
+        <div><div class="k">乘客</div><div class="v">大人 2 · 兒童 2</div></div>
+        <div><div class="k">座位</div><div class="v">[01A] 兒童 · [01B] 兒童 · [01C] 大人 · [01D] 大人</div></div>
+        <div><div class="k">票價</div><div class="v">¥6,600</div></div>
+        <div><div class="k">車票號碼</div><div class="v">115642063</div></div>
+      </div>
+      <div style="margin-top:8px;font-size:12px;color:var(--muted)">⚠ 線上取消截止：2026/06/29 10:40 ｜ 上下車請出示車票給司機</div>
     </div>
 
     <div class="section-title">💴 機票費用明細</div>
@@ -245,7 +275,7 @@
       <li class="event"><div class="time">05:30</div><div class="title">🌙 起床 × 最後確認行李</div></li>
       <li class="event transit"><div class="time">06:00</div><div class="title">🚖 出發前往 <a class="gmap" href="https://maps.google.com/?q=台灣桃園國際機場+第一航廈" target="_blank">桃園機場 T1</a></div><div class="desc">建議起飛前 2.5 小時到達。⚠️ 請依住家位置確認交通時間：台北市區 Uber 約 40–60 分、捷運＋機捷約 60 分、國道客運視路況，務必預留充裕時間。</div></li>
       <li class="event transit"><div class="time">06:30 – 08:10</div><div class="title">✅ 星宇 Check-in · 托運行李 · 出境 · 登機</div><div class="desc">星宇航空 JX800 · 第一航廈。訂位代號：<b>D7ZP8F</b></div><div class="tags"><span class="tag transit">桃園 T1</span></div></li>
-      <li class="event transit"><div class="time">08:30 – 12:55（3h 25m）</div><div class="title">✈ JX800 台北 TPE → 東京成田 NRT T2</div><div class="desc">Airbus A350-900 · 經濟艙 N · 託運 1 件/人。</div><div class="tags"><span class="tag transit">星宇航空</span></div></li>
+      <li class="event transit"><div class="time">08:30 – 12:55（3h 25m）</div><div class="title">✈ JX800 台北 TPE → 東京成田 NRT T2</div><div class="desc">Airbus A350-1000 · 經濟艙 N · 託運 1 件/人。</div><div class="tags"><span class="tag transit">星宇航空</span></div></li>
       <li class="event transit"><div class="time">12:55</div><div class="title">✈ <a class="gmap" href="https://maps.google.com/?q=成田国際空港" target="_blank">成田機場 T2</a> 抵達</div></li>
       <li class="event transit"><div class="time">12:55 – 14:15（80 min）</div><div class="title">入境 × 領行李</div><div class="tags"><span class="tag buffer">buffer +30 min</span></div></li>
       <li class="event transit">
@@ -320,7 +350,7 @@
   <section class="panel" data-day="3">
     <div class="day-head"><h2>Day 3 · 富士吉田 × 河口湖環遊</h2><div class="date">2026/06/28 · 星期日</div></div>
     <div class="hotel-pill">🏨 今晚住：<a class="gmap" href="https://maps.google.com/?q=THE+GARDEN+河口湖" target="_blank">THE GARDEN</a></div>
-    <div class="day-theme">🎯 <b>4 大景點 + ほうとう午餐 + 超市採買</b>｜動線：山上 → 富士吉田 → 河口湖北岸</div>
+    <div class="day-theme">🎯 <b>4 大景點 + ほうとう午餐 + 超市採買</b>｜動線：山上 → 富士吉田 → 河口湖北岸<br><span style="font-size:12px">🗻 出發前查 <a href="https://fuji-san.info/" target="_blank" style="color:var(--transit);font-weight:600">富士山即時能見度</a>，決定要不要調整順序追富士山！</span></div>
     <div class="buffer-note"><b>主時間：</b>6/28 11:30 取車、6/29 9:30 還車後直接接高速巴士。<br>🚗 本日改用 <b>Nippon Rent-A-Car（日本租車）河口湖駅前營業處</b>，車程與轉運安排會依此整合。</div>
     <div class="locker-card">
       <h3>🚗 租車 / 高巴士銜接規劃（6/28–6/29）</h3>
@@ -365,17 +395,17 @@
         <div class="title">🚗 河口湖 → <a class="gmap" href="https://maps.google.com/?q=新倉富士浅間神社+忠霊塔" target="_blank">新倉富士淺間神社</a>（富士吉田方向，車程約 10 分）</div>
         <div class="tags"><span class="tag transit">🚗 有車就方便</span></div>
       </li>
-      <li class="event highlight"><div class="time">11:45 – 13:00（75 min）</div><div class="title">🗻 <a class="gmap" href="https://maps.google.com/?q=新倉富士浅間神社+忠霊塔" target="_blank">新倉富士淺間神社 + 忠霊塔（新倉山淺間公園）</a></div><div class="desc">五重塔 × 富士山經典構圖。<b>398 階</b>階梯上塔，腿力考驗。</div><div class="tags"><span class="tag highlight">拍照地標</span></div></li>
-      <li class="event highlight"><div class="time">13:05 – 13:35（30 min）</div><div class="title">🛍 <a class="gmap" href="https://maps.google.com/?q=富士吉田+本町通り" target="_blank">富士吉田懷舊商店街（本町通り）</a></div><div class="desc">昭和懷舊 × 富士山正對街道的超經典構圖。復古店家、富士山煎餅。車停附近走路即達。</div></li>
-      <li class="event highlight"><div class="time">13:35 – 14:35（60 min）</div><div class="title">🛍 <a class="gmap" href="https://maps.google.com/?q=Montbell+Oginal+富士吉田" target="_blank">富士吉田 Montbell Oginal</a></div><div class="desc">1 小時購物，選擇富士吉田限定戶外／機能裝備。</div></li>
+      <li class="event highlight"><div class="time">11:45 – 13:00（75 min）</div><div class="title">🗻 <a class="gmap" href="https://maps.google.com/?q=新倉富士浅間神社+忠霊塔" target="_blank">新倉富士淺間神社 + 忠霊塔（新倉山淺間公園）</a></div><div class="desc">五重塔 × 富士山經典構圖。<b>398 階</b>階梯上塔，腿力考驗。</div><div class="tags"><span class="tag highlight">拍照地標</span></div><div class="navi-bar"><a class="navi-btn" href="https://www.google.com/maps/dir/?api=1&destination=新倉富士浅間神社&travelmode=driving" target="_blank">🧭 導航</a><span class="mapcode">📍 161 276 581*13</span></div></li>
+      <li class="event highlight"><div class="time">13:05 – 13:35（30 min）</div><div class="title">🛍 <a class="gmap" href="https://maps.google.com/?q=富士吉田+本町通り" target="_blank">富士吉田懷舊商店街（本町通り）</a></div><div class="desc">昭和懷舊 × 富士山正對街道的超經典構圖。復古店家、富士山煎餅。車停附近走路即達。</div><div class="navi-bar"><a class="navi-btn" href="https://www.google.com/maps/dir/?api=1&destination=富士吉田市営本町通り駐車場&travelmode=driving" target="_blank">🧭 導航</a><span class="mapcode">📍 161 246 625*83</span><span class="mapcode">🅿️ 本町通り駐車場</span></div></li>
+      <li class="event highlight"><div class="time">13:35 – 14:35（60 min）</div><div class="title">🛍 <a class="gmap" href="https://maps.google.com/?q=Montbell+Oginal+富士吉田" target="_blank">富士吉田 Montbell Oginal</a></div><div class="desc">1 小時購物，選擇富士吉田限定戶外／機能裝備。</div><div class="navi-bar"><a class="navi-btn" href="https://www.google.com/maps/dir/?api=1&destination=モンベル+富士吉田店&travelmode=driving" target="_blank">🧭 導航</a><span class="mapcode">📍 161 126 623*13</span></div></li>
       <li class="event transit"><div class="time">14:35 – 14:50（15 min）</div><div class="title">🚗 Montbell Oginal → 餺飥不動</div></li>
-      <li class="event meal"><div class="time">14:50 – 16:05（75 min）</div><div class="title">🍜 午餐 · <a class="gmap" href="https://maps.google.com/?q=ほうとう不動+東恋路店" target="_blank">餺飥不動 東戀路店</a></div><div class="desc">雲朵般純白的絕美建築（建築師保坂猛設計）× 招牌鐵鍋烏龍麵，好吃又好拍！</div><div class="tags"><span class="tag meal">設計名店</span><span class="tag meal">打卡必備</span></div></li>
+      <li class="event meal"><div class="time">14:50 – 16:05（75 min）</div><div class="title">🍜 午餐 · <a class="gmap" href="https://maps.google.com/?q=ほうとう不動+東恋路店" target="_blank">餺飥不動 東戀路店</a></div><div class="desc">雲朵般純白的絕美建築（建築師保坂猛設計）× 招牌鐵鍋烏龍麵，好吃又好拍！</div><div class="tags"><span class="tag meal">設計名店</span><span class="tag meal">打卡必備</span></div><div class="navi-bar"><a class="navi-btn" href="https://www.google.com/maps/dir/?api=1&destination=ほうとう不動+東恋路店&travelmode=driving" target="_blank">🧭 導航</a><span class="mapcode">📍 161 241 486*70</span></div></li>
       <li class="event transit"><div class="time">16:05 – 16:35（30 min）</div><div class="title">🚗 → 新屋山神社（上山，約 30 min 車程）</div><div class="tags"><span class="tag transit">🚗 山路慢行</span></div></li>
-      <li class="event highlight"><div class="time">16:35 – 17:35（60 min）</div><div class="title">💰 <a class="gmap" href="https://maps.google.com/?q=新屋山神社+本宮" target="_blank">新屋山神社（金運神社・二合目本宮）</a></div><div class="desc">日本三大金運神社。二合目本宮在富士山腰（海拔 ~1700m）。</div><div class="tags"><span class="tag highlight">金運</span></div></li>
+      <li class="event highlight"><div class="time">16:35 – 17:35（60 min）</div><div class="title">💰 <a class="gmap" href="https://maps.google.com/?q=新屋山神社+本宮" target="_blank">新屋山神社（金運神社・二合目本宮）</a></div><div class="desc">日本三大金運神社。二合目本宮在富士山腰（海拔 ~1700m）。</div><div class="tags"><span class="tag highlight">金運</span></div><div class="navi-bar"><a class="navi-btn" href="https://www.google.com/maps/dir/?api=1&destination=新屋山神社+本宮&travelmode=driving" target="_blank">🧭 導航</a><span class="mapcode">📍 161 156 541*26</span></div></li>
       <li class="event transit"><div class="time">17:35 – 18:05（30 min）</div><div class="title">🚗 下山 → 河口湖北岸</div></li>
-      <li class="event highlight"><div class="time">18:05 – 18:55（50 min）</div><div class="title">🌸 <a class="gmap" href="https://maps.google.com/?q=河口湖自然生活館" target="_blank">河口湖自然生活館 + 大石公園</a></div><div class="desc">6 月<b>薰衣草季</b>＋藍莓霜淇淋＋富士山湖景最佳角度。</div><div class="tags"><span class="tag highlight">薰衣草季</span></div></li>
-      <li class="event highlight"><div class="time">18:00 – 18:40（40 min）</div><div class="title">🛒 <a class="gmap" href="https://maps.google.com/?q=オギノ+河口湖店" target="_blank">Ogino 河口湖超市</a></div><div class="desc">熟食便當、刺身、當地限定商品 + Day 4 早餐。</div><div class="tags"><span class="tag highlight">超市</span></div></li>
-      <li class="event lodging"><div class="time">18:50 – 19:15</div><div class="title">🏨 Check-in · <a class="gmap" href="https://maps.google.com/?q=THE+GARDEN+河口湖" target="_blank">THE GARDEN</a></div></li>
+      <li class="event highlight"><div class="time">18:05 – 18:55（50 min）</div><div class="title">🌸 <a class="gmap" href="https://maps.google.com/?q=河口湖自然生活館" target="_blank">河口湖自然生活館 + 大石公園</a></div><div class="desc">6 月<b>薰衣草季</b>＋藍莓霜淇淋＋富士山湖景最佳角度。</div><div class="tags"><span class="tag highlight">薰衣草季</span></div><div class="navi-bar"><a class="navi-btn" href="https://www.google.com/maps/dir/?api=1&destination=河口湖自然生活館&travelmode=driving" target="_blank">🧭 導航</a><span class="mapcode">📍 59 089 325*84</span></div></li>
+      <li class="event highlight"><div class="time">18:00 – 18:40（40 min）</div><div class="title">🛒 <a class="gmap" href="https://maps.google.com/?q=オギノ+河口湖店" target="_blank">Ogino 河口湖超市</a></div><div class="desc">熟食便當、刺身、當地限定商品 + Day 4 早餐。</div><div class="tags"><span class="tag highlight">超市</span></div><div class="navi-bar"><a class="navi-btn" href="https://www.google.com/maps/dir/?api=1&destination=オギノ+河口湖店&travelmode=driving" target="_blank">🧭 導航</a><span class="mapcode">📍 161 271 728*84</span></div></li>
+      <li class="event lodging"><div class="time">18:50 – 19:15</div><div class="title">🏨 Check-in · <a class="gmap" href="https://maps.google.com/?q=THE+GARDEN+河口湖" target="_blank">THE GARDEN</a></div><div class="navi-bar"><a class="navi-btn" href="https://www.google.com/maps/dir/?api=1&destination=THE+GARDEN+河口湖&travelmode=driving" target="_blank">🧭 導航</a><span class="mapcode">📍 車機輸入：船津3561-3</span></div></li>
       <li class="event meal"><div class="time">19:30 – 21:00</div><div class="title">🍱 房內野餐晚餐</div><div class="tags"><span class="tag meal">房內野餐</span></div></li>
     </ol>
     <a class="route-btn-large d3-btn" href="https://www.google.com/maps/dir/河口湖遊覧船+天晴/新倉富士浅間神社/富士吉田本町通り/Montbell+Oginal+富士吉田/ほうとう不動+東恋路店/新屋山神社+本宮/河口湖自然生活館/オギノ+河口湖店/THE+GARDEN+河口湖" target="_blank">🗺 Day 3 整日路線導航</a>
@@ -391,7 +421,8 @@
       <li class="event meal"><div class="time">07:30 – 08:30</div><div class="title">🥐 飯店早餐</div></li>
       <li class="event lodging"><div class="time">08:30 – 09:00</div><div class="title">🏨 Check-out · THE GARDEN · 行李裝車</div></li>
       <li class="event transit"><div class="time">09:00 – 09:30</div><div class="title">🚗 開車至 <a class="gmap" href="https://maps.google.com/?q=山梨県南都留郡富士河口湖町船津3647-1" target="_blank">Nippon Rent-A-Car 河口湖駅前營業處</a> 還車</div><div class="desc">依你提供的主時間，<b>6/29 9:30 前完成還車</b>。從 THE GARDEN 出發約 3 分鐘、距離約 500 公尺，還車後步行 2 分鐘即可到河口湖車站，接高速巴士往東京／池袋。</div><div class="tags"><span class="tag transit">🚗 9:30 還車</span></div></li>
-      <li class="event transit"><div class="time">10:50 – 12:35</div><div class="title">🚌 河口湖 → <a class="gmap" href="https://maps.google.com/?q=バスタ新宿" target="_blank">バスタ新宿</a>（高速巴士） <span class="tag highlight">Day 4 車票</span></div></li>
+      <li class="event highlight"><div class="time">09:45 – 10:35（50 min）</div><div class="title">🛍 河口湖駅 伴手禮掃貨 + Buffer</div><div class="desc">還車後步行 2 分鐘到車站。站內土產店買信玄餅、富士山餅乾等最後一輪伴手禮，順便上廁所、買飲料，不趕不急等巴士。</div><div class="tags"><span class="tag buffer">悠閒 buffer</span><span class="tag highlight">伴手禮</span></div></li>
+      <li class="event transit"><div class="time">10:50 – 12:35</div><div class="title">🚌 河口湖 → <a class="gmap" href="https://maps.google.com/?q=バスタ新宿" target="_blank">バスタ新宿</a>（高速巴士） <span class="tag highlight">Day 4 車票</span></div><div class="desc">富士急行 1402 便 1 號車｜座位 [01A][01B] 兒童 · [01C][01D] 大人｜車票號碼 115642063<br><span style="color:var(--muted);font-size:11.5px">上下車請出示車票給司機</span></div></li>
       <li class="event transit"><div class="time">12:35 – 13:05</div><div class="title">🚇 新宿 → <a class="gmap" href="https://maps.google.com/?q=MIMARU東京池袋" target="_blank">MIMARU</a> 寄物</div><div class="tags"><span class="tag buffer">buffer +15 min</span></div></li>
       <li class="event meal"><div class="time">13:10 – 16:10</div><div class="title">🍜 午餐 · <a class="gmap" href="https://maps.google.com/?q=東武百貨池袋店" target="_blank">東武百貨 池袋店</a></div><div class="desc">
         ① <a class="gmap" href="https://maps.google.com/?q=回転寿し+トリトン+池袋東武" target="_blank">11F 回転寿し トリトン</a>：北海道人氣迴轉壽司<br>
@@ -510,7 +541,7 @@
         <div class="tags"><span class="tag transit">Skyliner ✅ 提前班次 · 建議預約</span></div>
       </li>
       <li class="event transit"><div class="time">17:06 – 20:10</div><div class="title">🧾 退稅 × 出境 × 候機</div><div class="desc">成田提早到，退稅、安檢和登機口移動都比較從容，不容易卡在排隊上。</div></li>
-      <li class="event transit"><div class="time">20:40 – 23:20（2h 40m）</div><div class="title">✈ JX805 東京成田 NRT → 台北 TPE T1</div><div class="desc">Airbus A321neo · 經濟艙 N · 訂位代號：<b>D7ZP8F</b></div><div class="tags"><span class="tag transit">星宇航空</span></div></li>
+      <li class="event transit"><div class="time">20:40 – 23:20（3h 40m）</div><div class="title">✈ JX805 東京成田 NRT → 台北 TPE T1</div><div class="desc">Airbus A330-900neo · 經濟艙 N · 訂位代號：<b>D7ZP8F</b></div><div class="tags"><span class="tag transit">星宇航空</span></div></li>
     </ol>
     <a class="route-btn-large d6-btn" href="https://www.google.com/maps/dir/池袋駅/上野駅/六本木ヒルズ/森美術館/21_21+DESIGN+SIGHT/東京ミッドタウン/上野駅/成田国際空港第2ターミナル" target="_blank">🗺 Day 6 整日路線導航</a>
   </section>
@@ -657,16 +688,17 @@
 
     <div class="section-title">📱 必裝 App</div>
     <table>
-      <tr><th>用途</th><th>App</th><th>說明</th></tr>
-      <tr><td>入境</td><td>Visit Japan Web</td><td>入境 QR 電子化</td></tr>
-      <tr><td>導航</td><td>Google Maps</td><td>離線下載東京＋山梨</td></tr>
-      <tr><td>電車時刻</td><td>Jorudan / NAVITIME Japan Travel</td><td>查發車、換乘</td></tr>
+      <tr><th>用途</th><th>App / 網站</th><th>說明</th></tr>
+      <tr><td>入境</td><td><a href="https://vjw-lp.digital.go.jp/" target="_blank">Visit Japan Web</a></td><td>入境 QR 電子化</td></tr>
+      <tr><td>導航</td><td><a href="https://www.google.com/maps" target="_blank">Google Maps</a></td><td>離線下載東京＋山梨</td></tr>
+      <tr><td>電車時刻</td><td><a href="https://www.jorudan.co.jp/" target="_blank">Jorudan</a> / <a href="https://japantravel.navitime.com/" target="_blank">NAVITIME</a></td><td>查發車、換乘</td></tr>
       <tr><td>地鐵</td><td>Tokyo Subway Navigation</td><td>官方免費、中文介面</td></tr>
-      <tr><td>翻譯</td><td>Google 翻譯 / DeepL</td><td>日文菜單即時相機翻譯</td></tr>
-      <tr><td>天氣</td><td>tenki.jp</td><td>日本氣象局，梅雨必查</td></tr>
-      <tr><td>富士急</td><td>富士急ハイランド 公式</td><td>即時設施排隊、暫停訊息</td></tr>
+      <tr><td>翻譯</td><td><a href="https://translate.google.com/" target="_blank">Google 翻譯</a> / <a href="https://www.deepl.com/" target="_blank">DeepL</a></td><td>日文菜單即時相機翻譯</td></tr>
+      <tr><td>天氣</td><td><a href="https://tenki.jp/" target="_blank">tenki.jp</a></td><td>日本氣象局，梅雨必查</td></tr>
+      <tr><td>富士山能見度</td><td><a href="https://fuji-san.info/" target="_blank">fuji-san.info</a></td><td>即時富士山能見度預報，Day 2–3 出發前必查</td></tr>
+      <tr><td>富士急</td><td><a href="https://www.fujiq.jp/" target="_blank">富士急ハイランド 公式</a></td><td>即時設施排隊、暫停訊息</td></tr>
       <tr><td>置物櫃</td><td>Suica Locker Navi</td><td>查新宿站空櫃</td></tr>
-      <tr><td>餐廳訂位</td><td>TableCheck / LINE</td><td>鳥貴族、BEAMS 訂位</td></tr>
+      <tr><td>餐廳訂位</td><td><a href="https://www.tablecheck.com/" target="_blank">TableCheck</a> / LINE</td><td>鳥貴族、BEAMS 訂位</td></tr>
     </table>
 
     <div class="section-title">💡 容易漏掉的事</div>
